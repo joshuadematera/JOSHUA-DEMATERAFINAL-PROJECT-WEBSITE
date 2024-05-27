@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Transformations</title>
+    <style>
+        body {
+            background-color: #333;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        canvas {
+            display: block;
+            margin: 20px auto;
+            background-color: #111;
+        }
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>Translate</h2>
+    <canvas id="translateCanvas" width="300" height="300"></canvas>
+    <h2>Rotate</h2>
+    <canvas id="rotateCanvas" width="300" height="300"></canvas>
+
+    <script>
+        function drawTranslate() {
+            const canvas = document.getElementById('translateCanvas');
+            const ctx = canvas.getContext('2d');
+
+            // Red square
+            ctx.fillStyle = 'red';
+            ctx.fillRect(10, 10, 50, 50);
+
+            // Translate and draw green square
+            ctx.translate(50, 50);
+            ctx.fillStyle = 'green';
+            ctx.fillRect(10, 10, 50, 50);
+
+            // Translate and draw blue square
+            ctx.translate(50, 50);
+            ctx.fillStyle = 'blue';
+            ctx.fillRect(10, 10, 50, 50);
+
+            // Translate and draw yellow square
+            ctx.translate(50, 50);
+            ctx.fillStyle = 'yellow';
+            ctx.fillRect(10, 10, 50, 50);
+        }
+
+        function drawRotate() {
+            const canvas = document.getElementById('rotateCanvas');
+            const ctx = canvas.getContext('2d');
+
+            // Red square
+            ctx.fillStyle = 'red';
+            ctx.fillRect(10, 10, 50, 50);
+
+            // Move to center and rotate
+            ctx.translate(60, 60);
+            ctx.rotate(45 * Math.PI / 180); // Rotate 45 degrees
+
+            // Draw green square
+            ctx.fillStyle = 'green';
+            ctx.fillRect(10, 10, 50, 50);
+
+            // Move to new position and rotate again
+            ctx.translate(60, 60);
+            ctx.rotate(45 * Math.PI / 180); // Rotate another 45 degrees
+
+            // Draw blue square
+            ctx.fillStyle = 'blue';
+            ctx.fillRect(10, 10, 50, 50);
+        }
+
+        drawTranslate();
+        drawRotate();
+    </script>
+</body>
+</html>

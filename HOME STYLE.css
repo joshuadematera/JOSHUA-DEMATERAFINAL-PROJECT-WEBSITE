@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: url('my\ FAVORITE\ BACKGROUND\ COLOR.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #f1c227;
+}
+
+header {
+    width: 100%;
+    background-color: #922121;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.menu-icon {
+    margin-right: 10px;
+}
+
+.menu-icon i {
+    font-size: 24px;
+    color: #fad11a;
+}
+
+header h1 {
+    font-size: 24px;
+    margin: 0;
+    color: #fad11a;
+}
+
+main {
+    text-align: center;
+}
+
+main h2 {
+    font-size: 36px;
+    margin: 0;
+}
+
+main h3 {
+    font-size: 24px;
+    margin: 0;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Interactive Rectangle</title>
+  <style>
+    canvas {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <label for="x">X Coordinate:</label>
+  <input type="number" id="x" value="30"><br>
+  <label for="y">Y Coordinate:</label>
+  <input type="number" id="y"><br>
+  <label for="width">Width:</label>
+  <input type="number" id="width"><br>
+  <label for="height">Height:</label>
+  <input type="number" id="height"><br>
+  <label for="fillColor">Fill Color:</label>
+  <input type="color" id="fillColor" value="#ff0000"><br>
+  <label for="borderColor">Border Color:</label>
+  <input type="color" id="borderColor" value="#000000"><br><br>
+  <button onclick="drawRectangle()">Draw Rectangle</button>
+  <button onclick="clearCanvas()">Clear Canvas</button><br><br>
+  
+  <canvas id="myCanvas" width="400" height="400" style="border:1px solid #000000;"></canvas>
+  
+  <script>
+    const canvas = document.getElementById('myCanvas');
+    const ctx = canvas.getContext('2d');
+
+    let startX = 30;
+    let startY = 30;
+    let width = 100;
+    let height = 100;
+    let fillColor = '#ff0000';
+    let borderColor = '#000000';
+
+    function drawRectangle() {
+      startX = parseInt(document.getElementById('x').value);
+      startY = parseInt(document.getElementById('y').value);
+      width = parseInt(document.getElementById('width').value);
+      height = parseInt(document.getElementById('height').value);
+      fillColor = document.getElementById('fillColor').value;
+      borderColor = document.getElementById('borderColor').value;
+
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = fillColor;
+      ctx.strokeStyle = borderColor;
+      ctx.fillRect(startX, startY, width, height);
+      ctx.strokeRect(startX, startY, width, height);
+    }
+
+    function clearCanvas() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+  </script>
+</body>
+</html>
